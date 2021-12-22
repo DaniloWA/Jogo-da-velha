@@ -1,3 +1,6 @@
+body{
+    font-family: consolas;
+}
 .borderTopBottom{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
@@ -15,6 +18,7 @@
 .borderLeft{
     border-left: 1px solid black;
 }
+
 .pontuacao{
     display: grid;
     grid-template-columns: 1fr;
@@ -45,6 +49,10 @@
     .espaco{
         width:  100%;
         height: 100%;
+        display: grid;
+        img{
+            @extend .centralizar;
+        }
     }
     
     .placar{
@@ -157,4 +165,71 @@
 
 
     
+}
+
+label{
+    margin: 5px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+input[type="text"]{
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    background-color:rgba(0, 0, 0, 0.753); 
+    color: white;
+    border: none;
+}
+input[type="button"]{
+    background-color: grey;
+    color: white;
+    border-radius: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    border:none;
+    &:hover{
+        color: black;
+        background-color: white;
+    }
+    &:active{
+        background-color: rgb(152, 253, 0);
+    }
+}
+.pegarDados{
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.863);
+    border: 4px black solid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    padding: 25px;
+    padding-bottom: 10px;
+    row-gap: 1vh;
+    grid-template-areas: 
+        'label1 label1'
+        'jogador1 jogador1' 
+        'label2 label2'
+        'jogador2 jogador2'
+        'btnStart btnStart'
+    ;
+    #label1{
+        grid-area:label1;
+    }
+    #label2{
+        grid-area: label2;
+    }
+    #jogador1{
+        grid-area:jogador1;
+    }
+    #jogador2{
+        grid-area: jogador2;
+    }
+    #btnStart{
+        grid-area: btnStart;
+    }
 }

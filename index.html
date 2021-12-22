@@ -8,63 +8,90 @@
     <title>Jogo da velha</title>
 </head>
 <body>
+    <div class="pegarDados">
+        <label id="label1" for="jogador1">Nome Player X</label>
+        <input id="jogador1" type="text" autocomplete="off" maxlength="8"><br>
+        <label id="label2" for="jogador2">Nome Player O</label>
+        <input id="jogador2" type="text" autocomplete="off" maxlength="8">
+        <input type="button" id="btnStart" value="START" onclick="getDados()">
+    </div>
     <div class="container">
         <div class="mostrador">
-            <h1>Vez do Jogador</h1>
-            <img src="img/x.png" alt="X">
+            <h1>Vez do Jogador <span id="nomeAtual">Name</span> :</h1>
+            <img id="imgDaVez" src="img/x.png" alt="X">
         </div>
         <div class="tabuleiro">
-            <div id="a1" class="espaco" jogada=""></div>
-            <div id="a2" class="espaco" jogada=""></div>
-            <div id="a3" class="espaco" jogada=""></div>
+            <div id="a1" class="espaco">
+               
+            </div>
+            <div id="a2" class="espaco" jogada="">
+               
+            </div>
+            <div id="a3" class="espaco" jogada="">
+               
+            </div>
 
-            <div id="b1" class="espaco" jogada=""></div>
-            <div id="b2" class="espaco" jogada=""></div>
-            <div id="b3" class="espaco" jogada=""></div>
+            <div id="b1" class="espaco" jogada="">
+               
+            </div>
+            <div id="b2" class="espaco" jogada="">
+               
+            </div>
+            <div id="b3" class="espaco" jogada="">
+               
+            </div>
 
-            <div id="c1" class="espaco" jogada=""></div>
-            <div id="c2" class="espaco" jogada=""></div>
-            <div id="c3" class="espaco" jogada=""></div>
+            <div id="c1" class="espaco" jogada="">
+               
+            </div>
+            <div id="c2" class="espaco" jogada="">
+               
+            </div>
+            <div id="c3" class="espaco" jogada="">
+               
+            </div>
         </div>
         <div class="placar">
-            <h1 id="nick1">BOT 1</h1>
-            <h1 id="nick2">BOT 2</h1>
+            <h1 id="nick1">Name 1</h1>
+            <h1 id="nick2">Name 2</h1>
             <hr>
             <div class="player1">
                 <div class="pontos">
-                    <img src="#" alt="Y">
+                    
                 </div>
                 <div class="pontos">
-                    <img src="#" alt="Y">
+                    
                 </div>
                 <div class="pontos">
-                    <img src="#" alt="Y">
+                    
                 </div>
                 <div class="pontos">
-                    <img src="#" alt="Y">
+                    
                 </div>
                 <div class="pontos">
-                    <img src="#" alt="Y">
+                    
                 </div>
             </div>
             <div class="player2">
                 <div class="pontos">
-                    <img src="#" alt="X">
+                    
                 </div>
                 <div class="pontos">
-                    <img src="#" alt="X">
+                    
                 </div>
                 <div class="pontos">
-                    <img src="#" alt="X">
+                    
                 </div>
                 <div class="pontos">
-                    <img src="#" alt="X">
+                    
                 </div>
                 <div class="pontos">
-                    <img src="#" alt="X">
+                    
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="/js/game.js"></script>
 </body>
 </html>

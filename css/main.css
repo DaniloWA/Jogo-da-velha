@@ -1,3 +1,7 @@
+body {
+  font-family: consolas;
+}
+
 .borderTopBottom, .container .tabuleiro #b3, .container .tabuleiro #b2, .container .tabuleiro #b1 {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -24,7 +28,7 @@
 .pontuacao .pontos, .container .placar .player2 .pontos, .container .placar .player1 .pontos {
   display: grid;
 }
-.centralizar, .container .mostrador .img, .container .mostrador .h1, .container .mostrador, .pontuacao .pontos img, .container .placar .player2 .pontos img, .container .placar .player1 .pontos img {
+.centralizar, .container .mostrador .img, .container .mostrador .h1, .container .mostrador, .container .espaco img, .pontuacao .pontos img, .container .placar .player2 .pontos img, .container .placar .player1 .pontos img {
   justify-self: center;
   align-self: center;
 }
@@ -38,6 +42,7 @@
 .container .espaco {
   width: 100%;
   height: 100%;
+  display: grid;
 }
 .container .placar {
   grid-area: placar;
@@ -117,5 +122,69 @@
 }
 .container .tabuleiro #c3 {
   grid-area: c3;
+}
+
+label {
+  margin: 5px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+input[type=text] {
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.753);
+  color: white;
+  border: none;
+}
+
+input[type=button] {
+  background-color: grey;
+  color: white;
+  border-radius: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  border: none;
+}
+input[type=button]:hover {
+  color: black;
+  background-color: white;
+}
+input[type=button]:active {
+  background-color: #98fd00;
+}
+
+.pegarDados {
+  display: grid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.863);
+  border: 4px black solid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  padding: 25px;
+  padding-bottom: 10px;
+  row-gap: 1vh;
+  grid-template-areas: "label1 label1" "jogador1 jogador1" "label2 label2" "jogador2 jogador2" "btnStart btnStart";
+}
+.pegarDados #label1 {
+  grid-area: label1;
+}
+.pegarDados #label2 {
+  grid-area: label2;
+}
+.pegarDados #jogador1 {
+  grid-area: jogador1;
+}
+.pegarDados #jogador2 {
+  grid-area: jogador2;
+}
+.pegarDados #btnStart {
+  grid-area: btnStart;
 }
 /*# sourceMappingURL=main.css.map */
