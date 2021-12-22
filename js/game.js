@@ -1,9 +1,20 @@
-let p1 = "x"
-let p2 = "o"
-let player1 
-let player2
+class Jogador {
+    constructor(){
+        this.nome;
+        this.simbolo;
+    }
+    adcNome(name){
+        this.nome = name;
+    }
+    adcSimbolo(simbolo){
+        this.simbolo = simbolo;
+    }
+}
 
-let playeTime = player1;
+let player1 = new Jogador()
+let player2 = new Jogador()
+
+let playeTime;
 let gameOver = false;
 
 const btn = document.querySelector('#btnStart')
@@ -13,71 +24,69 @@ const nick1Tabela = document.querySelector('#nick1')
 const nick2Tabela = document.querySelector('#nick2')
 
 function getDados(){
-    player1 = document.querySelector('#jogador1').value
-    player2 = document.querySelector('#jogador2').value
-    
-    nomeDoJogadorVez.textContent = player1
-    nick1Tabela.textContent = player1
-    nick2Tabela.textContent = player2
+    player1.adcNome(document.querySelector('#jogador1').value)
+    player1.adcSimbolo("x")
+
+    player2.adcNome(document.querySelector('#jogador2').value) 
+    player2.adcSimbolo("o")
+
+    nomeDoJogadorVez.textContent = player1.nome
+    playeTime = player1.nome
+    nick1Tabela.textContent = player1.nome
+    nick2Tabela.textContent = player2.nome
     painelDados.remove();
+
 }
 
 window.addEventListener("click", function(atual){
     let alvo = atual.target;
-    console.log(alvo)
-    if(gameOver) {return}
-    
-    console.log(player1, player2)
-    console.log(alvo.getElementsByTagName('img').length)
-    if(alvo.getElementsByTagName('img').length == 0){
-        console.log(playeTime)
-        if(playeTime == player1){
-            console.log("Player 01 IF")
-            alvo.innerHtml = "<img src='/img/x.png'>"
-            alvo.setAttribute('jogada', player1)
-            playeTime = player2
-        } 
+    if(gameOver) {return console.log('Game Over - identificado pelo Click')}
 
-        if(playeTime == player2){
-            console.log("Player 02 IF")
-            alvo.innerHtml = "<img src='/img/circulo.png'>"
-            alvo.setAttribute('jogada', player2)
-            playeTime = player1
+    if(alvo.getAttribute('jogada') == "f"){
+        if(playeTime === player1.nome){
+            criarElementos("x", alvo)
+            alvo.setAttribute('jogada', player1.nome)
+            playeTime = player2.nome
+            nomeDoJogadorVez.textContent = player2.nome
+        } else{
+            criarElementos("o", alvo)
+            alvo.setAttribute('jogada', player2.nome)
+            playeTime = player1.nome
+            nomeDoJogadorVez.textContent = player1.nome
         }
         refresh()
-    }
+    } else
+        return
 
 })
-tabuleiro()
 
-
+function criarElementos(simbolo,alvo){
+    var imgNova = document.createElement("img");
+    
+    if(simbolo == "x"){
+        imgNova.src="/img/x.png"
+        imgNova.alt="X"
+        alvo.appendChild(imgNova)
+    } else {
+        imgNova.src="/img/circulo.png"
+        imgNova.alt="X"
+        alvo.appendChild(imgNova)
+    }
+}
 
 function refresh(){
     if(gameOver){return}
 
-    if(playeTime == player1) {
+    if(playeTime == player1.nome) {
         let imagemDaJogadaAtual = document.querySelector('#imgDaVez')
         imagemDaJogadaAtual.setAttribute('src', "/img/x.png")
     }
     
-    if(playeTime == player2){
+    if(playeTime == player2.nome){
         let imagemDaJogadaAtual = document.querySelector('#imgDaVez')
         imagemDaJogadaAtual.setAttribute('src', "/img/circulo.png")  
     }
 }   
-
-function tabuleiro(){
-    let espacos = document.querySelectorAll("espaco")
-    console.log(espacos)
-
-    for(let i = 0; i < espacos.length; i++){
-
-        espacos[i].addEventListener('click', function(){
-
-            
-            })
-        }
-    }
 
     /*
     for(let i = 0; 0 < espacos.length; i++){
