@@ -47,7 +47,6 @@ function getDados(){
 
 window.addEventListener("click", function(atual){
     let alvo = atual.target;
-
     if(alvo.getAttribute('jogada') == "f"){
         if(playeTime === player1.nome && player1.nome != "default"){
             criarElementos("x", alvo)
@@ -70,6 +69,7 @@ window.addEventListener("click", function(atual){
 function criarElementos(simbolo,alvo){
     let imgNova = document.createElement("img");
     imgNova.className = "tabuleiroClean"
+    
     if(simbolo == "x"){
         imgNova.src="/img/x.png"
         imgNova.alt="X"
@@ -79,6 +79,7 @@ function criarElementos(simbolo,alvo){
         imgNova.alt="O"
         alvo.appendChild(imgNova)
     }
+    
 }
 
 function refresh(){
@@ -215,4 +216,13 @@ function verificarVencedor(){
             console.log('Vitorias do ' + player2.nome + ' : ' + player2.placar)
         }
     }
+    empate()
 }
+
+function empate(){
+    if(document.querySelectorAll('.tabuleiroClean').length == 9){
+        alert('Resetando tabuleiro por empate!')
+        cleanTabuleiro()
+    }
+}
+ 
