@@ -47,7 +47,6 @@ function getDados(){
 
 window.addEventListener("click", function(atual){
     let alvo = atual.target;
-    if(gameOver) {return console.log('Game Over - identificado pelo Click')}
 
     if(alvo.getAttribute('jogada') == "f"){
         if(playeTime === player1.nome && player1.nome != "default"){
@@ -83,7 +82,6 @@ function criarElementos(simbolo,alvo){
 }
 
 function refresh(){
-    if(gameOver){return}
 
     if(playeTime == player1.nome) {
         let imagemDaJogadaAtual = document.querySelector('#imgDaVez')
