@@ -1,0 +1,21 @@
+    let a1 = document.getElementById('a1').getAttribute('jogada');
+    let a2 = document.getElementById('a2').getAttribute('jogada');
+    let a3 = document.getElementById('a3').getAttribute('jogada');
+
+    let b1 = document.getElementById('b1').getAttribute('jogada');
+    let b2 = document.getElementById('b2').getAttribute('jogada');
+    let b3 = document.getElementById('b3').getAttribute('jogada');
+
+    let c1 = document.getElementById('c1').getAttribute('jogada');
+    let c2 = document.getElementById('c2').getAttribute('jogada');
+    let c3 = document.getElementById('c3').getAttribute('jogada');
+
+
+    a1 + a2 + a3
+    b1 + b2 + b3
+    c1 + c2 + c3
+    a1 + b1 + c1
+    a2 + b2 + c2
+    a3 + b3 + c3 
+    a1 + b2 + c3
+    a3 + b2 + c1

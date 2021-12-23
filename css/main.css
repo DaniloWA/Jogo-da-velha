@@ -25,10 +25,10 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, 1fr);
 }
-.pontuacao .pontos, .container .placar .player2 .pontos, .container .placar .player1 .pontos {
+.pontuacao .pontos1, .container .placar .player2 .pontos1, .container .placar .player1 .pontos1, .pontuacao .pontos2, .container .placar .player2 .pontos2, .container .placar .player1 .pontos2 {
   display: grid;
 }
-.centralizar, .container .mostrador .img, .container .mostrador .h1, .container .mostrador, .container .espaco img, .pontuacao .pontos img, .container .placar .player2 .pontos img, .container .placar .player1 .pontos img {
+.centralizar, .container .mostrador .img, .container .mostrador .h1, .container .mostrador, .container .espaco img, .pontuacao .pontos1 img, .container .placar .player2 .pontos1 img, .container .placar .player1 .pontos1 img, .pontuacao .pontos2 img, .container .placar .player2 .pontos2 img, .container .placar .player1 .pontos2 img {
   justify-self: center;
   align-self: center;
 }

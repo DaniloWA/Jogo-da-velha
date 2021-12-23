@@ -23,7 +23,7 @@ body{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows:repeat(5, 1fr);
-    .pontos{
+    .pontos1, .pontos2{
         display: grid;
         img{
             @extend .centralizar;
